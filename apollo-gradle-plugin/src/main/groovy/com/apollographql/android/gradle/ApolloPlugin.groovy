@@ -169,6 +169,7 @@ class ApolloPlugin implements Plugin<Project> {
   }
 
   private DomainObjectCollection<BaseVariant> getVariants() {
+    println project.android.hasProperty('libraryVariants') ? "Running on library project" : "Running on application project"
     return project.android.hasProperty('libraryVariants') ? project.android.libraryVariants : project.android.applicationVariants
   }
 
